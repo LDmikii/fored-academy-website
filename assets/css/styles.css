@@ -105,7 +105,7 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.12; font-weight: 700;
 .brand { display: flex; align-items: center; gap: 11px; font-family: var(--font-head); font-weight: 700; font-size: 1.18rem; color: var(--text); }
 .brand .brand-full { height: 46px; width: auto; display: block; }
 .brand .brand-fallback { display: inline-flex; align-items: center; gap: 11px; }
-.brand .logo-mark { width: 52px; height: 52px; flex: none; }
+.brand .logo-mark { width: 46px; height: 46px; flex: none; }
 .brand .wordmark b { color: var(--primary); }
 .brand .wordmark .sub { display: block; font-size: 0.62rem; letter-spacing: 0.28em; font-weight: 600; color: var(--muted); text-transform: uppercase; }
 
