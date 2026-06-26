@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ForEd Academy — Study Abroad & Scholarships</title>
+  <meta name="description" content="ForEd Academy guides students from Azerbaijan to top scholarships and universities around the world.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script>document.documentElement.setAttribute("data-theme", localStorage.getItem("fored-theme") || "dark");</script>
+</head>
+<body>
+  <header id="site-header" data-active="home"></header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow"><span class="dot"></span><span data-i18n="hero.eyebrow"></span></span>
+          <h1><span data-i18n="hero.title1"></span> <span class="grad" data-i18n="hero.title2"></span></h1>
+          <p class="lead" data-i18n="hero.lead"></p>
+          <div class="hero-cta">
+            <a href="scholarships.html" class="btn btn-primary" data-i18n="hero.cta1"></a>
+            <a href="scholarships.html#contact" class="btn btn-ghost" data-i18n="hero.cta2"></a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat"><div class="num"><span data-i18n="hero.stat1.num"></span></div><div class="label" data-i18n="hero.stat1.label"></div></div>
+            <div class="stat"><div class="num"><span data-i18n="hero.stat2.num"></span></div><div class="label" data-i18n="hero.stat2.label"></div></div>
+            <div class="stat"><div class="num"><span data-i18n="hero.stat3.num"></span></div><div class="label" data-i18n="hero.stat3.label"></div></div>
+          </div>
+        </div>
+        <div class="globe-wrap">
+          <div id="globe"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 data-i18n="feat.head"></h2>
+          <p data-i18n="feat.sub"></p>
+        </div>
+        <div class="features">
+          <div class="card reveal">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="0.6" fill="currentColor"/></svg></div>
+            <h3 data-i18n="feat.1.title"></h3>
+            <p data-i18n="feat.1.text"></p>
+          </div>
+          <div class="card reveal">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></div>
+            <h3 data-i18n="feat.2.title"></h3>
+            <p data-i18n="feat.2.text"></p>
+          </div>
+          <div class="card reveal">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polygon points="16.2 7.8 13.4 13.4 7.8 16.2 10.6 10.6" fill="currentColor" stroke="none"/></svg></div>
+            <h3 data-i18n="feat.3.title"></h3>
+            <p data-i18n="feat.3.text"></p>
+          </div>
+        </div>
+
+        <div class="cta-band reveal">
+          <h2 data-i18n="homecta.title"></h2>
+          <p data-i18n="homecta.text"></p>
+          <a href="scholarships.html#contact" class="btn btn-primary" data-i18n="homecta.btn"></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <!-- Globe libs (UMD, no build step needed) -->
+  <script src="https://unpkg.com/globe.gl@2.32.0/dist/globe.gl.min.js"></script>
+
+  <!-- App scripts -->
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/globe.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

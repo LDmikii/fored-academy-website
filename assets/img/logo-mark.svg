@@ -1,0 +1,17 @@
+<svg viewBox="70 54 220 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ForEd Academy">
+  <!-- Fallback recreation of the ForEd mark: an isometric frame with a central
+       gap. Top + right = teal, bottom + left = amber. Replace with the real
+       symbol by saving it as assets/img/logo-mark.png. -->
+  <!-- Top side (teal) -->
+  <polygon points="140,95 260,153 212,160" fill="#2BA7B5"/>
+  <polygon points="140,95 212,160 164,136" fill="#1E8E9C"/>
+  <!-- Right side (teal) -->
+  <polygon points="260,153 220,233 196,192" fill="#176F7B"/>
+  <polygon points="260,153 196,192 212,160" fill="#1E8E9C"/>
+  <!-- Bottom side (amber) -->
+  <polygon points="220,233 100,175 148,168" fill="#F4B454"/>
+  <polygon points="220,233 148,168 196,192" fill="#F2A62E"/>
+  <!-- Left side (amber) -->
+  <polygon points="100,175 140,95 164,136" fill="#D98C16"/>
+  <polygon points="100,175 164,136 148,168" fill="#F2A62E"/>
+</svg>

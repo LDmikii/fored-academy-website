@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scholarships Abroad — ForEd Academy</title>
+  <meta name="description" content="A curated guide to the world's leading scholarships open to Azerbaijani students.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script>document.documentElement.setAttribute("data-theme", localStorage.getItem("fored-theme") || "dark");</script>
+</head>
+<body>
+  <header id="site-header" data-active="scholarships"></header>
+
+  <main>
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow"><span class="dot"></span><span data-i18n="sch.eyebrow"></span></span>
+        <h1 data-i18n="sch.title"></h1>
+        <p data-i18n="sch.lead"></p>
+      </div>
+    </section>
+
+    <!-- FILTERS + GRID -->
+    <section class="section" style="padding-top:0;">
+      <div class="container">
+        <div class="filters" id="filters"></div>
+        <div class="scholarship-grid" id="scholarship-grid"></div>
+
+        <!-- CTA -->
+        <div class="cta-band reveal">
+          <h2 data-i18n="schcta.title"></h2>
+          <p data-i18n="schcta.text"></p>
+          <a href="#contact" class="btn btn-primary" data-i18n="schcta.btn"></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact" style="padding-top:0;">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 data-i18n="contact.head"></h2>
+          <p data-i18n="contact.sub"></p>
+        </div>
+        <div class="features" id="contact-cards"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <!-- App scripts -->
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/scholarships.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    /* Build contact cards from SITE config (after layout/config available) */
+    document.addEventListener("DOMContentLoaded", () => {
+      const wrap = document.getElementById("contact-cards");
+      if (!wrap) return;
+      const cards = [
+        { ico: ICONS.mail,      label: "Email",     value: SITE.email,           href: "mailto:" + SITE.email },
+        { ico: ICONS.phone,     label: "Phone",     value: SITE.phone,           href: "tel:" + SITE.phoneHref },
+        { ico: ICONS.whatsapp,  label: "WhatsApp",  value: SITE.phone,           href: SITE.whatsapp },
+        { ico: ICONS.instagram, label: "Instagram", value: SITE.instagramHandle, href: SITE.instagram },
+        { ico: ICONS.facebook,  label: "Facebook",  value: "Fored Academy",      href: SITE.facebook },
+        { ico: ICONS.pin,       label: "Address",   value: SITE.address,         href: SITE.mapUrl }
+      ].filter(c => c.value);
+      wrap.innerHTML = cards.map(c => `
+        <div class="card reveal">
+          <div class="ico">${c.ico}</div>
+          <h3>${c.label}</h3>
+          ${c.href ? `<a class="more" href="${c.href}" target="_blank" rel="noopener">${c.value}</a>` : `<p>${c.value}</p>`}
+        </div>`).join("");
+      if (window.observeReveals) window.observeReveals();
+    });
+  </script>
+</body>
+</html>
