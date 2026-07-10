@@ -127,12 +127,23 @@ const I18N = {
   }
 };
 
-/* --- language state --- */
+/* --- language state ---
+   No saved choice -> follow the device language (Azerbaijani devices get AZ,
+   everything else gets EN). A manual switch saves the choice and wins. */
 const LANG_KEY = "fored-lang";
-function getLang() { return localStorage.getItem(LANG_KEY) || "en"; }
-function setLang(lang) {
+function deviceLang() {
+  // Respect the device's preference order: first supported language wins.
+  const langs = navigator.languages || [navigator.language || ""];
+  for (const l of langs) {
+    const c = (l || "").toLowerCase();
+    if (c.startsWith("az")) return "az";
+    if (c.startsWith("en")) return "en";
+  }
+  return "en";
+}
+function getLang() { return localStorage.getItem(LANG_KEY) || deviceLang(); }
+function applyLang(lang) {
   if (!I18N[lang]) lang = "en";
-  localStorage.setItem(LANG_KEY, lang);
   applyI18n(lang);
   document.documentElement.lang = lang;
   document.querySelectorAll(".lang-switch button").forEach(b => {
@@ -140,6 +151,11 @@ function setLang(lang) {
   });
   // let pages react (e.g. re-render scholarship cards)
   document.dispatchEvent(new CustomEvent("langchange", { detail: { lang } }));
+}
+function setLang(lang) {
+  if (!I18N[lang]) lang = "en";
+  localStorage.setItem(LANG_KEY, lang);
+  applyLang(lang);
 }
 function t(key, lang = getLang()) { return (I18N[lang] && I18N[lang][key]) || (I18N.en[key] || key); }
 

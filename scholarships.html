@@ -11,7 +11,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
-  <script>document.documentElement.setAttribute("data-theme", localStorage.getItem("fored-theme") || "dark");</script>
+  <meta name="theme-color" content="#06141A" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#F4F8FA" media="(prefers-color-scheme: light)">
+  <script>document.documentElement.setAttribute("data-theme", localStorage.getItem("fored-theme") || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark"));</script>
 </head>
 <body>
   <header id="site-header" data-active="scholarships"></header>
